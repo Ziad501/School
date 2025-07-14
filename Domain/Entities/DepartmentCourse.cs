@@ -1,11 +1,11 @@
 ﻿namespace Domain.Entities
 {
-    public class DepartmentCourse
+    public class DepartmentCourse : BaseEntity
     {
-        public int DepartmentId { get; set; }
-        public Department Department { get; set; } = null!;
-        public int CourseId { get; set; }
-        public Course Course { get; set; } = null!;
-        public ICollection<StudentCourse> StudentCourses { get; set; } = new HashSet<StudentCourse>();
+        public Guid DepartmentId { get; set; }
+        public Guid CourseId { get; set; }
+        public bool IsCoreRequirement { get; set; } = true;
+        public virtual Department Department { get; set; } = null!;
+        public virtual Course Course { get; set; } = null!;
     }
 }
