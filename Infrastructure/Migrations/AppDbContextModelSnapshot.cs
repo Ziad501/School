@@ -75,10 +75,10 @@ namespace Infrastructure.Migrations
                             Code = "CS201",
                             CreditHours = 4,
                             Description = "Fundamental data structures and algorithms",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(776),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6228),
                             Name = "Data Structures",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(768),
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6217),
                             TeacherId = new Guid("00000000-0000-0000-0000-000000000201")
                         },
                         new
@@ -88,10 +88,10 @@ namespace Infrastructure.Migrations
                             Code = "CS301",
                             CreditHours = 3,
                             Description = "Advanced algorithm design and analysis",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(782),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6234),
                             Name = "Analysis of Algorithms",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(781),
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6233),
                             TeacherId = new Guid("00000000-0000-0000-0000-000000000201")
                         },
                         new
@@ -101,10 +101,10 @@ namespace Infrastructure.Migrations
                             Code = "CS202",
                             CreditHours = 3,
                             Description = "Relational database design and implementation",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(814),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6237),
                             Name = "Database Systems",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(814),
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6236),
                             TeacherId = new Guid("00000000-0000-0000-0000-000000000203")
                         },
                         new
@@ -114,10 +114,10 @@ namespace Infrastructure.Migrations
                             Code = "EE101",
                             CreditHours = 4,
                             Description = "Basic circuit theory and analysis",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(817),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6239),
                             Name = "Circuit Analysis",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(817),
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6239),
                             TeacherId = new Guid("00000000-0000-0000-0000-000000000202")
                         },
                         new
@@ -127,10 +127,10 @@ namespace Infrastructure.Migrations
                             Code = "EE201",
                             CreditHours = 3,
                             Description = "Digital systems and logic design principles",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(820),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6242),
                             Name = "Digital Logic Design",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(820),
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6242),
                             TeacherId = new Guid("00000000-0000-0000-0000-000000000202")
                         },
                         new
@@ -140,10 +140,10 @@ namespace Infrastructure.Migrations
                             Code = "MATH101",
                             CreditHours = 4,
                             Description = "Differential and integral calculus",
-                            EndDate = new DateTime(2025, 10, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(830),
+                            EndDate = new DateTime(2025, 10, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6245),
                             Name = "Calculus I",
                             Period = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(2025, 6, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(830)
+                            StartDate = new DateTime(2025, 6, 14, 23, 49, 26, 46, DateTimeKind.Utc).AddTicks(6244)
                         });
                 });
 
@@ -218,49 +218,49 @@ namespace Infrastructure.Migrations
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000011"),
-                            Id = new Guid("7ed84231-2814-4e06-ba29-c30073271b6f"),
+                            Id = new Guid("1db8ab4a-841b-4ad8-b9d8-06bf39a11fc6"),
                             IsCoreRequirement = true
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000012"),
-                            Id = new Guid("3d4556c7-5eb9-42b3-8ad2-8901c890050c"),
+                            Id = new Guid("32d31eff-3e41-4485-aa1f-02ea49aeb0d9"),
                             IsCoreRequirement = true
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000013"),
-                            Id = new Guid("cc945e49-8718-4576-8810-530ace87a140"),
+                            Id = new Guid("89362f88-6990-44f1-849e-0d7cf1d9b7e2"),
                             IsCoreRequirement = true
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000021"),
-                            Id = new Guid("17d3c9d1-da1c-4d18-981f-1efddd30f6d4"),
+                            Id = new Guid("21580688-9af0-477a-8ff2-db7b46e17dca"),
                             IsCoreRequirement = true
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000022"),
-                            Id = new Guid("7dc7ffac-7212-4d16-af84-4af5f8e76b68"),
+                            Id = new Guid("9ad734e0-2433-4cc4-838c-240830dc311a"),
                             IsCoreRequirement = false
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000031"),
-                            Id = new Guid("d32a6064-01f5-4704-8d38-f3c85a5c1f69"),
+                            Id = new Guid("d5a2864f-09d7-478d-8c45-e05df612496b"),
                             IsCoreRequirement = true
                         },
                         new
                         {
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000031"),
-                            Id = new Guid("f9cd37ca-1975-4f80-8659-6ba2e6edc256"),
+                            Id = new Guid("5e1c57ad-2d67-4e1f-a071-95db0a91d04c"),
                             IsCoreRequirement = true
                         });
                 });
@@ -319,10 +319,10 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000101"),
                             Address = "123 Tech Way",
-                            DateOfBirth = new DateTime(2000, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 5, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Email = "alice.johnson@student.edu",
-                            EnrollmentDate = new DateTime(2024, 7, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(9474),
+                            EnrollmentDate = new DateTime(2024, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(3641),
                             FirstName = "Alice",
                             IsActive = true,
                             LastName = "Johnson",
@@ -332,10 +332,10 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000102"),
                             Address = "456 Code Lane",
-                            DateOfBirth = new DateTime(2001, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2001, 3, 22, 0, 0, 0, 0, DateTimeKind.Utc),
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Email = "bob.williams@student.edu",
-                            EnrollmentDate = new DateTime(2024, 7, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(9479),
+                            EnrollmentDate = new DateTime(2024, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(3646),
                             FirstName = "Bob",
                             IsActive = true,
                             LastName = "Williams",
@@ -345,10 +345,10 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000103"),
                             Address = "789 Logic Blvd",
-                            DateOfBirth = new DateTime(1999, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1999, 11, 8, 0, 0, 0, 0, DateTimeKind.Utc),
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Email = "charlie.brown@student.edu",
-                            EnrollmentDate = new DateTime(2025, 1, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(9482),
+                            EnrollmentDate = new DateTime(2025, 1, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(3652),
                             FirstName = "Charlie",
                             IsActive = true,
                             LastName = "Brown",
@@ -358,10 +358,10 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000104"),
                             Address = "101 Algorithm Ave",
-                            DateOfBirth = new DateTime(2002, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2002, 1, 30, 0, 0, 0, 0, DateTimeKind.Utc),
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Email = "diana.miller@student.edu",
-                            EnrollmentDate = new DateTime(2025, 1, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(9484),
+                            EnrollmentDate = new DateTime(2025, 1, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(3655),
                             FirstName = "Diana",
                             IsActive = true,
                             LastName = "Miller",
@@ -371,10 +371,10 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000105"),
                             Address = "212 Circuit Cr",
-                            DateOfBirth = new DateTime(2000, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 7, 12, 0, 0, 0, 0, DateTimeKind.Utc),
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Email = "eve.davis@student.edu",
-                            EnrollmentDate = new DateTime(2023, 7, 14, 23, 34, 48, 297, DateTimeKind.Utc).AddTicks(9487),
+                            EnrollmentDate = new DateTime(2023, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(3657),
                             FirstName = "Eve",
                             IsActive = true,
                             LastName = "Davis",
@@ -397,7 +397,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("EnrollmentDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                        .HasDefaultValueSql("now()");
 
                     b.Property<string>("Grade")
                         .IsRequired()
@@ -424,72 +424,72 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a3eb3f1f-94b8-4058-bdcb-34e727d881bd"),
+                            Id = new Guid("30864863-cf8e-4073-a54e-34dad785da73"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000011"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3086),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6667),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000101")
                         },
                         new
                         {
-                            Id = new Guid("2dcae727-bd0b-441a-b897-6fb4878a786f"),
+                            Id = new Guid("a98ad2ab-54f3-4cb0-bd3f-ab92dcf5baa7"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000031"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3095),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6672),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000101")
                         },
                         new
                         {
-                            Id = new Guid("f9731854-94ec-4ca3-a947-f5ef31f74d8f"),
+                            Id = new Guid("6471c841-7973-4fc2-b07c-c406afd1c016"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000011"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3098),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6679),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000102")
                         },
                         new
                         {
-                            Id = new Guid("22af58ab-cb52-49d0-93bf-8a1aa9505f15"),
+                            Id = new Guid("219f5997-9b0d-402a-af3e-dc2fcdebc94a"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000012"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3100),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6681),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000102")
                         },
                         new
                         {
-                            Id = new Guid("2ad9c909-b70f-41cd-861f-17ceac503ce9"),
+                            Id = new Guid("c37deab2-0275-4010-a0cc-5be6a0334c10"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000021"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3133),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6683),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000103")
                         },
                         new
                         {
-                            Id = new Guid("2d86cb73-0769-44ab-870e-7a59fb8acd9a"),
+                            Id = new Guid("e2ceb1fb-9b53-4050-abed-8957e50f599d"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000013"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3137),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6685),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000104")
                         },
                         new
                         {
-                            Id = new Guid("15b2a4aa-45ef-4094-aa0c-831d9134c51d"),
+                            Id = new Guid("50939d5f-2047-4c01-8de3-fafe93d62227"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000022"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3139),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6689),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000105")
                         },
                         new
                         {
-                            Id = new Guid("38352581-6830-43dc-8171-8a17001c8276"),
+                            Id = new Guid("ef51b2aa-3b22-4c8f-bd1c-8cd66b92b392"),
                             CourseId = new Guid("00000000-0000-0000-0000-000000000031"),
-                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(3141),
+                            EnrollmentDate = new DateTime(2025, 6, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(6690),
                             Grade = "",
                             Status = "Enrolled",
                             StudentId = new Guid("00000000-0000-0000-0000-000000000105")
@@ -541,7 +541,7 @@ namespace Infrastructure.Migrations
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Email = "john.smith@university.edu",
                             FirstName = "John",
-                            HireDate = new DateTime(2025, 7, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(4632),
+                            HireDate = new DateTime(2025, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(8251),
                             LastName = "Smith",
                             Phone = "555-0201"
                         },
@@ -551,7 +551,7 @@ namespace Infrastructure.Migrations
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Email = "sarah.johnson@university.edu",
                             FirstName = "Sarah",
-                            HireDate = new DateTime(2025, 7, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(4641),
+                            HireDate = new DateTime(2025, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(8265),
                             LastName = "Johnson",
                             Phone = "555-0202"
                         },
@@ -561,7 +561,7 @@ namespace Infrastructure.Migrations
                             DepartmentId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Email = "michael.brown@university.edu",
                             FirstName = "Michael",
-                            HireDate = new DateTime(2025, 7, 14, 23, 34, 48, 298, DateTimeKind.Utc).AddTicks(4643),
+                            HireDate = new DateTime(2025, 7, 14, 23, 49, 26, 47, DateTimeKind.Utc).AddTicks(8267),
                             LastName = "Brown",
                             Phone = "555-0203"
                         });

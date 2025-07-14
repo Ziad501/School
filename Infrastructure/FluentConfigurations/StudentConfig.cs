@@ -39,7 +39,7 @@ namespace Infrastructure.FluentConfigurations
                     Address = "123 Tech Way",
                     Phone = "555-0101",
                     DepartmentId = SeedingIds.CsDeptId,
-                    DateOfBirth = new DateTime(2000, 5, 15),
+                    DateOfBirth = new DateTime(2000, 5, 15, 0, 0, 0, DateTimeKind.Utc),
                     EnrollmentDate = DateTime.UtcNow.AddYears(-1)
                 },
                 new Student
@@ -51,7 +51,7 @@ namespace Infrastructure.FluentConfigurations
                     Address = "456 Code Lane",
                     Phone = "555-0102",
                     DepartmentId = SeedingIds.CsDeptId,
-                    DateOfBirth = new DateTime(2001, 3, 22),
+                    DateOfBirth = new DateTime(2001, 3, 22, 0, 0, 0, DateTimeKind.Utc),
                     EnrollmentDate = DateTime.UtcNow.AddYears(-1)
                 },
                 new Student
@@ -63,7 +63,7 @@ namespace Infrastructure.FluentConfigurations
                     Address = "789 Logic Blvd",
                     Phone = "555-0103",
                     DepartmentId = SeedingIds.EeDeptId,
-                    DateOfBirth = new DateTime(1999, 11, 8),
+                    DateOfBirth = new DateTime(1999, 11, 8, 0, 0, 0, DateTimeKind.Utc),
                     EnrollmentDate = DateTime.UtcNow.AddMonths(-6)
                 },
                 new Student
@@ -75,7 +75,7 @@ namespace Infrastructure.FluentConfigurations
                     Address = "101 Algorithm Ave",
                     Phone = "555-0104",
                     DepartmentId = SeedingIds.CsDeptId,
-                    DateOfBirth = new DateTime(2002, 1, 30),
+                    DateOfBirth = new DateTime(2002, 1, 30, 0, 0, 0, DateTimeKind.Utc),
                     EnrollmentDate = DateTime.UtcNow.AddMonths(-6)
                 },
                 new Student
@@ -87,7 +87,7 @@ namespace Infrastructure.FluentConfigurations
                     Address = "212 Circuit Cr",
                     Phone = "555-0105",
                     DepartmentId = SeedingIds.EeDeptId,
-                    DateOfBirth = new DateTime(2000, 7, 12),
+                    DateOfBirth = new DateTime(2000, 7, 12, 0, 0, 0, DateTimeKind.Utc),
                     EnrollmentDate = DateTime.UtcNow.AddYears(-2)
                 }
             );

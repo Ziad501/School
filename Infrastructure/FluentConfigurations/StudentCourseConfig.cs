@@ -21,7 +21,7 @@ namespace Infrastructure.FluentConfigurations
 
             builder.Property(sc => sc.EnrollmentDate)
                 .IsRequired()
-                .HasDefaultValueSql("GETUTCDATE()");
+                .HasDefaultValueSql("now()");
 
             builder.Property(sc => sc.Status)
                 .IsRequired()
