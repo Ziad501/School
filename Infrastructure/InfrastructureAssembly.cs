@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+﻿using Application.Interfaces;
+using Application.Interfaces.Generic;
 using Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using Application.Interfaces;
 using Infrastructure.Repositories;
+using Infrastructure.Repositories.Genereic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
 {
@@ -11,11 +13,12 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
         {
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IStudentRepository), typeof(StudentRepository));
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
-            //services.AddScoped<IStudentRepository, StudentRepository>();
             return services;
         }
     }

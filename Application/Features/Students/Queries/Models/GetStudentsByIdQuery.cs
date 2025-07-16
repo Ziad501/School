@@ -4,7 +4,5 @@ using MediatR;
 
 namespace Application.Features.Students.Queries.Models
 {
-    public record GetStudentsQuery() : IRequest<ResultT<List<StudentDto>>>
-    {
-    }
+    public record GetStudentsByIdQuery(Guid Id) : IRequest<ResultT<StudentDto>>;
 }

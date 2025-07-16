@@ -1,6 +1,6 @@
 using Infrastructure;
 using Application;
-//using Presentation.Controllers;
+using Presentation.Controllers;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //builder.Services.AddControllers().AddApplicationPart(typeof(StudentController).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers().AddApplicationPart(typeof(StudentController).Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure(builder.Configuration).AddApplication();
