@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Features.Students.Queries.Models
 {
-    public record GetStudentsQuery() : IRequest<ResultT<List<StudentDto>>>
+    public record GetStudentsQuery(int page, int pageSize) : IRequest<ResultT<PagedList<StudentDto>>>
     {
     }
 }

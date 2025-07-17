@@ -1,12 +1,17 @@
 ﻿using Application.DTOs.StudentDtos;
+using Application.Interfaces;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Validators.StudentValidation
 {
     public class StudentCreateDtoValidator : AbstractValidator<StudentCreateDto>
     {
-        public StudentCreateDtoValidator()
+        private readonly IStudentRepository _studentRepository;
+        public StudentCreateDtoValidator(IStudentRepository studentRepository)
         {
+            _studentRepository = studentRepository;
+            
             RuleFor(x => x.FirstName)
                 .NotEmpty().WithMessage("First name is required")
                 .MaximumLength(100).WithMessage("First name cannot exceed 100 characters");
@@ -18,7 +23,8 @@ namespace Application.Validators.StudentValidation
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("Email is required")
                 .EmailAddress().WithMessage("Invalid email format")
-                .MaximumLength(255).WithMessage("Email cannot exceed 255 characters");
+                .MaximumLength(255).WithMessage("Email cannot exceed 255 characters")
+                .MustAsync(BeUniqueMail).WithMessage("Email already exists");
 
             RuleFor(x => x.Address)
                 .NotEmpty().WithMessage("Address is required")
@@ -35,7 +41,18 @@ namespace Application.Validators.StudentValidation
 
             RuleFor(x => x.DepartmentId)
                 .NotEmpty().WithMessage("Department ID is required")
-                .NotEqual(Guid.Empty).WithMessage("Invalid Department ID");
+                .NotEqual(Guid.Empty).WithMessage("Invalid Department ID")
+                .MustAsync(BeDepartmentId).WithMessage("invalid department id");
+        }
+        private async Task<bool> BeUniqueMail(string Email, CancellationToken cancellationToken)
+        {
+            var exists = await _studentRepository.GetAsync(p => p.Email.Equals(Email),cancellationToken:cancellationToken);
+            return exists == null;
+        }
+        private async Task<bool> BeDepartmentId(Guid id , CancellationToken cancellationToken)
+        {
+            var exists = await _studentRepository.GetTableAsTracking().Include(p=>p.Department).FirstOrDefaultAsync(p=>p.DepartmentId == id,cancellationToken);
+            return exists != null;
         }
     }
 }

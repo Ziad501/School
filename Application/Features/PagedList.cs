@@ -12,7 +12,7 @@ namespace Application.Features
         public bool HasNext => CurrentPage < TotalPages;
         public List<T> Items { get; } = new();
 
-        private PagedList(List<T> items, int count, int currentPage, int pageSize)
+        public PagedList(List<T> items, int count, int currentPage, int pageSize)
         {
             TotalCount = count;
             PageSize = pageSize;

@@ -3,6 +3,8 @@ using Domain.Entities;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories.Genereic
 {
@@ -93,6 +95,17 @@ namespace Infrastructure.Repositories.Genereic
         {
             _dbSet.UpdateRange(entities);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<T?> GetAsync(Expression<Func<T, bool>>? filter, Func<IQueryable<T>, IQueryable<T>>? include = null, CancellationToken cancellationToken = default)
+        {
+            IQueryable<T> query = _dbSet.AsNoTracking();
+            if (include is not null)
+                query = include(query);
+            if (filter is not null)
+                query = query.Where(filter);
+
+            return await query.FirstOrDefaultAsync(cancellationToken);
         }
     }
 }

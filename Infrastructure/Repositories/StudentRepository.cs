@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Features;
+using Application.Interfaces;
 using Domain.Entities;
 using Infrastructure.Data;
 using Infrastructure.Repositories.Genereic;
@@ -8,9 +9,10 @@ namespace Infrastructure.Repositories
 {
     public class StudentRepository(AppDbContext _context) : GenericRepository<Student>(_context), IStudentRepository
     {
-        public async Task<List<Student>> GetAllStudents(CancellationToken cancellation)
+        public async Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation)
         {
-            return await _dbSet.Include(p => p.Department).ToListAsync(cancellation);
+            var query =  _dbSet.Include(p => p.Department).AsNoTracking();
+            return await PagedList<Student>.CreateAsync(query, page, pageSize, cancellation);
         }
 
     }
