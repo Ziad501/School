@@ -1,5 +1,4 @@
-﻿using Application.DTOs.StudentDtos;
-using Application.Features;
+﻿using Application.Features;
 using Application.Interfaces;
 using Domain.Abstractions;
 using Domain.Entities;
@@ -9,10 +8,11 @@ namespace Infrastructure.Repositories
 {
     public class StudentService(IStudentRepository _repo) : IStudentService
     {
-        public async Task<ResultT<Student>> AddStudentAsync(StudentDto studentDto, CancellationToken cancellation)
+        public async Task<ResultT<Student>> AddStudentAsync(Student student, CancellationToken cancellation)
         {
-            var student = await _repo.GetTableNoTracking().FirstOrDefaultAsync(cancellation);
-            _repo.AddAsync(student);
+            if (student is null)
+                return Errors.NullValue;
+            _repo.AddAsync(student, cancellation);
             return student;
         }
 
@@ -23,9 +23,14 @@ namespace Infrastructure.Repositories
 
         public async Task<ResultT<Student>> GetStudentById(Guid id, CancellationToken cancellation)
         {
-            var student = await _repo.GetTableNoTracking()
-                .Include(p=>p.Department)
-                .FirstOrDefaultAsync(s => s.Id.Equals(id),cancellation);
+            var student = await _repo.GetAsync(
+                            filter: p => p.Id == id,
+                            include: x => x.Include(p => p.Department),
+                            cancellationToken: cancellation);
+            if (student is null)
+            {
+                return Errors.NotFound;
+            }
             return student;
         }
     }

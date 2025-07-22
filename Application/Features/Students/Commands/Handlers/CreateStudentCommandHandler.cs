@@ -9,7 +9,7 @@ using MediatR;
 
 namespace Application.Features.Students.Commands.Handlers
 {
-    public class AddStudentCommandHandler(IStudentRepository _repo, IMapper _mapper, IValidator<StudentCreateDto> _validator) :
+    public class CreateStudentCommandHandler(IStudentService _repo, IMapper _mapper, IValidator<StudentCreateDto> _validator) :
         IRequestHandler<AddStudentCommand, ResultT<StudentDto>>
     {
         public async Task<ResultT<StudentDto>> Handle(AddStudentCommand request, CancellationToken cancellationToken)
@@ -21,7 +21,8 @@ namespace Application.Features.Students.Commands.Handlers
             if (request.dto is null)
                 return Errors.NullValue;
             var Student = _mapper.Map<Student>(request.dto);
-            await _repo.AddAsync(Student);
+            await _repo.AddStudentAsync(Student, cancellationToken);
+
             var studentDto = _mapper.Map<StudentDto>(Student);
             return ResultT<StudentDto>.Success(studentDto);
         }

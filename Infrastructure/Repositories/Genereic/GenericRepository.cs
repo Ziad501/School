@@ -3,7 +3,6 @@ using Domain.Entities;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories.Genereic
@@ -30,9 +29,9 @@ namespace Infrastructure.Repositories.Genereic
             await _context.SaveChangesAsync();
 
         }
-        public virtual async Task<T> AddAsync(T entity)
+        public virtual async Task<T> AddAsync(T entity ,CancellationToken cancellationToken)
         {
-            await _dbSet.AddAsync(entity);
+            await _dbSet.AddAsync(entity, cancellationToken);
             await _context.SaveChangesAsync();
 
             return entity;

@@ -15,7 +15,7 @@ namespace Application.Interfaces.Generic
         void RollBack();
         IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
-        Task<T> AddAsync(T entity);
+        Task<T> AddAsync(T entity,CancellationToken cancellationToken);
         Task AddRangeAsync(ICollection<T> entities);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(ICollection<T> entities);

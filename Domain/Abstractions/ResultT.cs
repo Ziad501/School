@@ -13,7 +13,6 @@
         public static ResultT<T> Success(T value) => new(value, true, Error.None);
 
         public static new ResultT<T> Failure(Error error) => new(default, false, error);
-
         public static implicit operator ResultT<T>(Error error) => Failure(error);
         public static implicit operator ResultT<T>(T value) => Success(value);
 

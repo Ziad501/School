@@ -7,11 +7,7 @@ namespace Application.Validators.StudentValidation
     {
         public StudentUpdateDtoValidator()
         {
-            RuleFor(x => x.Id)
-                .NotEmpty()
-                .WithMessage("ID is required")
-                .NotEqual(Guid.Empty)
-                .WithMessage("Invalid ID format");
+            RuleFor(x => x.Id).IsValidId();
 
             RuleFor(x => x.FirstName)
                 .NotEmpty().WithMessage("First name is required")

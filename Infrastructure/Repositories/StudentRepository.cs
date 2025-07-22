@@ -12,8 +12,7 @@ namespace Infrastructure.Repositories
         public async Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation)
         {
             var query = _dbSet.Include(p => p.Department).AsNoTracking();
-            var studnets = await query.ToListAsync(cancellation);
-            return  PagedList<Student>.Create(studnets, page, pageSize);
+            return await PagedList<Student>.CreateAsync(query, page, pageSize,cancellation);
         }
 
     }

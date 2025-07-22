@@ -1,4 +1,6 @@
-﻿namespace Application.Features
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Application.Features
 {
     public class PagedList<T>
     {
@@ -19,23 +21,24 @@
             Items.AddRange(items);
         }
 
-        public static PagedList<T> Create(
-            IEnumerable<T> source,
+        public static async Task<PagedList<T>> CreateAsync(
+            IQueryable<T> source,
             int currentPage,
-            int pageSize)
+            int pageSize,
+            CancellationToken cancellationToken = default)
         {
             currentPage = currentPage <= 0 ? 1 : currentPage;
             pageSize = pageSize <= 0 ? 10 : pageSize;
 
-            var count =  source.Count();
+            var count = await source.CountAsync(cancellationToken);
 
             if (count == 0)
                 return new PagedList<T>(new List<T>(), 0, currentPage, pageSize);
 
-            var items = source
+            var items = await source
                 .Skip((currentPage - 1) * pageSize)
                 .Take(pageSize)
-                .ToList();
+                .ToListAsync(cancellationToken);
 
             return new PagedList<T>(items, count, currentPage, pageSize);
         }
