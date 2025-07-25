@@ -6,6 +6,6 @@ namespace Application.Interfaces
 {
     public interface IStudentRepository : IGenericRepository<Student>
     {
-        public Task<PagedList<Student>> GetAllStudents(int page, int pageSize,CancellationToken cancellation);
+        Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation);
     }
 }

@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Infrastructure.Data;
+using Infrastructure.Paging;
 using Infrastructure.Repositories.Genereic;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,8 +13,7 @@ namespace Infrastructure.Repositories
         public async Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation)
         {
             var query = _dbSet.Include(p => p.Department).AsNoTracking();
-            return await PagedList<Student>.CreateAsync(query, page, pageSize,cancellation);
+            return await query.ToPagedListAsync(page, pageSize, cancellation);
         }
-
     }
 }

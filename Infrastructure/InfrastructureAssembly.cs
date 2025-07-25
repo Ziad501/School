@@ -7,21 +7,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure
+namespace Infrastructure;
+public static class InfrastructureAssembly
 {
-    public static class InfrastructureAssembly
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
-        {
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IStudentRepository), typeof(StudentRepository));
-            services.AddScoped(typeof(IStudentService), typeof(StudentService));
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped(typeof(IStudentRepository), typeof(StudentRepository));
+        services.AddScoped(typeof(IStudentService), typeof(StudentService));
 
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
-            });
-            return services;
-        }
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+        });
+        return services;
     }
 }

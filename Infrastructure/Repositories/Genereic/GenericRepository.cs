@@ -29,7 +29,7 @@ namespace Infrastructure.Repositories.Genereic
             await _context.SaveChangesAsync();
 
         }
-        public virtual async Task<T> AddAsync(T entity ,CancellationToken cancellationToken)
+        public virtual async Task<T> AddAsync(T entity, CancellationToken cancellationToken)
         {
             await _dbSet.AddAsync(entity, cancellationToken);
             await _context.SaveChangesAsync();
@@ -39,15 +39,15 @@ namespace Infrastructure.Repositories.Genereic
 
         public virtual async Task UpdateAsync(T entity)
         {
-            _dbSet.Update(entity);
+            _dbSet.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
         }
 
-        public virtual async Task DeleteAsync(T entity)
+        public virtual async Task DeleteAsync(T entity, CancellationToken cancellation)
         {
             _dbSet.Remove(entity);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellation);
         }
         public virtual async Task DeleteRangeAsync(ICollection<T> entities)
         {

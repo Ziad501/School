@@ -1,5 +1,5 @@
-﻿using Application.Features.Students.Queries.Handlers;
-using Application.Validators.StudentValidation;
+﻿using Application.Features.Students.Commands.StudentValidation;
+using Application.Features.Students.Queries.Handlers;
 using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;

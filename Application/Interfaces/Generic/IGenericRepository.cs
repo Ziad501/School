@@ -15,11 +15,11 @@ namespace Application.Interfaces.Generic
         void RollBack();
         IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
-        Task<T> AddAsync(T entity,CancellationToken cancellationToken);
+        Task<T> AddAsync(T entity, CancellationToken cancellationToken);
         Task AddRangeAsync(ICollection<T> entities);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(ICollection<T> entities);
-        Task DeleteAsync(T entity);
+        Task DeleteAsync(T entity, CancellationToken cancellation);
     }
 }
 

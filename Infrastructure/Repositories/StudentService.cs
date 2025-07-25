@@ -16,6 +16,12 @@ namespace Infrastructure.Repositories
             return student;
         }
 
+        public async Task<Result> DeleteStudentAsync(Student student, CancellationToken cancellation)
+        {
+            await _repo.DeleteAsync(student, cancellation);
+            return Result.Success();
+        }
+
         public async Task<ResultT<PagedList<Student>>> GetAllStudents(int page, int pageSize, CancellationToken cancellation)
         {
             return await _repo.GetAllStudents(page, pageSize, cancellation);
@@ -32,6 +38,12 @@ namespace Infrastructure.Repositories
                 return Errors.NotFound;
             }
             return student;
+        }
+
+        public async Task<Result> UpdateStudentAsync(Student student, CancellationToken cancellation)
+        {
+            await _repo.UpdateAsync(student);
+            return Result.Success();
         }
     }
 }

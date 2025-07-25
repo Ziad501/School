@@ -1,17 +1,23 @@
 ﻿using Application.DTOs.StudentDtos;
 using Application.Interfaces;
+using Application.Interfaces.Generic;
+using Application.Validators;
+using Domain.Entities;
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 
-namespace Application.Validators.StudentValidation
+namespace Application.Features.Students.Commands.StudentValidation
 {
-    public class StudentCreateDtoValidator : AbstractValidator<StudentCreateDto>
+    public class StudentUpdateDtoValidator : AbstractValidator<StudentUpdateDto>
     {
-        private readonly IStudentRepository _studentRepository;
-        public StudentCreateDtoValidator(IStudentRepository studentRepository)
+        private readonly IStudentRepository _repo;
+        private readonly IGenericRepository<Department> _gen;
+        public StudentUpdateDtoValidator(IStudentRepository repo, IGenericRepository<Department> gen)
         {
-            _studentRepository = studentRepository;
-            
+            _repo = repo;
+            _gen = gen;
+
+            RuleFor(x => x.Id).IsValidId();
+
             RuleFor(x => x.FirstName)
                 .NotEmpty().WithMessage("First name is required")
                 .MaximumLength(100).WithMessage("First name cannot exceed 100 characters");
@@ -24,7 +30,7 @@ namespace Application.Validators.StudentValidation
                 .NotEmpty().WithMessage("Email is required")
                 .EmailAddress().WithMessage("Invalid email format")
                 .MaximumLength(255).WithMessage("Email cannot exceed 255 characters")
-                .MustAsync(BeUniqueMail).WithMessage("Email already exists");
+                .MustAsync(BeUniqueEmail).WithMessage("Email exists, try another one!");
 
             RuleFor(x => x.Address)
                 .NotEmpty().WithMessage("Address is required")
@@ -42,17 +48,14 @@ namespace Application.Validators.StudentValidation
             RuleFor(x => x.DepartmentId)
                 .NotEmpty().WithMessage("Department ID is required")
                 .NotEqual(Guid.Empty).WithMessage("Invalid Department ID")
-                .MustAsync(BeDepartmentId).WithMessage("invalid department id");
+                .DepartmentMustExist(_gen);
         }
-        private async Task<bool> BeUniqueMail(string Email, CancellationToken cancellationToken)
+        private async Task<bool> BeUniqueEmail(StudentUpdateDto studentDto, string email, CancellationToken cancellationToken)
         {
-            var exists = await _studentRepository.GetAsync(p => p.Email.Equals(Email),cancellationToken:cancellationToken);
-            return exists == null;
-        }
-        private async Task<bool> BeDepartmentId(Guid id , CancellationToken cancellationToken)
-        {
-            var exists = await _studentRepository.GetTableAsTracking().Include(p=>p.Department).FirstOrDefaultAsync(p=>p.DepartmentId == id,cancellationToken);
-            return exists != null;
+            var student = await _repo.GetAsync(p => p.Email.Equals(email), cancellationToken: cancellationToken);
+            if (student == null)
+                return true;
+            return student.Id == studentDto.Id;
         }
     }
 }
