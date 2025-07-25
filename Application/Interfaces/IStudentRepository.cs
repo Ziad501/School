@@ -2,10 +2,9 @@
 using Application.Interfaces.Generic;
 using Domain.Entities;
 
-namespace Application.Interfaces
+namespace Application.Interfaces;
+
+public interface IStudentRepository : IGenericRepository<Student>
 {
-    public interface IStudentRepository : IGenericRepository<Student>
-    {
-        Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation);
-    }
+    Task<PagedList<Student>> GetAllStudents(int page, int pageSize, CancellationToken cancellation);
 }

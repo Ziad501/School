@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
 
 namespace Application.Interfaces.Generic
@@ -10,9 +9,6 @@ namespace Application.Interfaces.Generic
         Task<T> GetByIdAsync(Guid id, CancellationToken cancellation);
         Task<T?> GetAsync(Expression<Func<T, bool>>? filter, Func<IQueryable<T>, IQueryable<T>>? include = null, CancellationToken cancellationToken = default);
         Task SaveChangesAsync();
-        IDbContextTransaction BeginTransaction();
-        void Commit();
-        void RollBack();
         IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
         Task<T> AddAsync(T entity, CancellationToken cancellationToken);

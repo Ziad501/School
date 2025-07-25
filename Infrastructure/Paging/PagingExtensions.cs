@@ -15,10 +15,6 @@ public static class PagingExtensions
         pageSize = pageSize <= 0 ? 10 : pageSize;
 
         var count = await source.CountAsync(cancellationToken);
-
-        if (count == 0)
-            return new PagedList<T>(new List<T>(), 0, currentPage, pageSize);
-
         var items = await source
             .Skip((currentPage - 1) * pageSize)
             .Take(pageSize)

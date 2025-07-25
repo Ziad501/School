@@ -1,11 +1,10 @@
-﻿namespace Domain.Entities
+﻿namespace Domain.Entities;
+
+public enum EnrollmentStatus
 {
-    public enum EnrollmentStatus
-    {
-        Enrolled,
-        Completed,
-        Dropped,
-        Withdrawn,
-        Failed
-    }
+    Enrolled,
+    Completed,
+    Dropped,
+    Withdrawn,
+    Failed
 }

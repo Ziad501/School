@@ -1,17 +1,16 @@
-﻿namespace Domain.Entities
+﻿namespace Domain.Entities;
+
+public abstract class BaseEntity
 {
-    public abstract class BaseEntity
+    public Guid Id { get; set; }
+
+    protected BaseEntity()
     {
-        public Guid Id { get; set; }
+        Id = Guid.NewGuid();
+    }
 
-        protected BaseEntity()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        protected BaseEntity(Guid id)
-        {
-            Id = id;
-        }
+    protected BaseEntity(Guid id)
+    {
+        Id = id;
     }
 }
